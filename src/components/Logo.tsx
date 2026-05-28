@@ -31,10 +31,10 @@ export function Logo({
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden
         >
-          <rect x="1" y="7" width="6" height="6" fill="#D9FF35" />
-          <rect x="7" y="13" width="6" height="6" fill="#D9FF35" />
-          <rect x="1" y="19" width="6" height="6" fill="#D9FF35" />
-          <rect x="19" y="19" width="12" height="6" fill="#D9FF35" />
+          <rect x="1" y="7" width="6" height="6" fill="#DC2626" />
+          <rect x="7" y="13" width="6" height="6" fill="#DC2626" />
+          <rect x="1" y="19" width="6" height="6" fill="#DC2626" />
+          <rect x="19" y="19" width="12" height="6" fill="#DC2626" />
         </svg>
       </span>
       {withWordmark && (

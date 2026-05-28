@@ -427,7 +427,7 @@ function VmPanel({
   state: VmSnapshot;
 }) {
   return (
-    <div className="rounded-lg border border-creamLine bg-[#FBF8F0]/60 overflow-hidden">
+    <div className="rounded-lg border border-creamLine bg-[#13131A]/60 overflow-hidden">
       <div className="flex items-center justify-between px-3.5 py-2 border-b border-creamLine flex-wrap gap-y-1">
         <div className="flex items-center gap-3 min-w-0">
           <span

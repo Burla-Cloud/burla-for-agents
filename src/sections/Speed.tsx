@@ -135,7 +135,7 @@ export function Speed() {
                               label="without"
                               widthPct={otherWidth}
                               seconds={row.withoutBurla * localT}
-                              barClass="bg-error/40"
+                              barClass="bg-ink/25"
                               labelClass="text-inkSubtle"
                               done={done}
                               finalText={`${row.withoutBurla.toFixed(0)}s wait`}
@@ -162,7 +162,7 @@ export function Speed() {
                       <div className="stat-label">Idle time the agent burns</div>
                       <div className="mt-3 space-y-1.5 mono text-[13px]">
                         <div className="flex items-baseline gap-3">
-                          <span className="text-error/80 w-[88px] tnum">
+                          <span className="text-inkMuted w-[88px] tnum">
                             ~3 min
                           </span>
                           <span className="text-inkSubtle">
@@ -244,7 +244,7 @@ function BarRow({
       </div>
       <div className="w-[104px] shrink-0 text-right mono text-[12px] tnum whitespace-nowrap">
         {done ? (
-          <span className={kind === "fast" ? "text-accent" : "text-error/80"}>
+          <span className={kind === "fast" ? "text-accent" : "text-inkMuted"}>
             {finalText}
           </span>
         ) : (

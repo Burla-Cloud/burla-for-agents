@@ -265,8 +265,8 @@ function ClusterRamp() {
         >
           <defs>
             <linearGradient id="rampGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#D9FF35" stopOpacity="0.32" />
-              <stop offset="100%" stopColor="#D9FF35" stopOpacity="0" />
+              <stop offset="0%" stopColor="#DC2626" stopOpacity="0.32" />
+              <stop offset="100%" stopColor="#DC2626" stopOpacity="0" />
             </linearGradient>
           </defs>
 
@@ -277,7 +277,7 @@ function ClusterRamp() {
               x2={RAMP_W - RAMP_PAD_X}
               y1={yOf(c)}
               y2={yOf(c)}
-              stroke="#1F1F26"
+              stroke="#E2DCC8"
               strokeDasharray="2 8"
               strokeWidth="1"
               vectorEffect="non-scaling-stroke"
@@ -289,7 +289,7 @@ function ClusterRamp() {
             x2={RAMP_W - RAMP_PAD_X}
             y1={yOf(RAMP_PEAK_CPUS)}
             y2={yOf(RAMP_PEAK_CPUS)}
-            stroke="#D9FF35"
+            stroke="#DC2626"
             strokeOpacity="0.35"
             strokeDasharray="4 6"
             strokeWidth="1"
@@ -309,7 +309,7 @@ function ClusterRamp() {
             ref={lineRef}
             d={linePath}
             fill="none"
-            stroke="#D9FF35"
+            stroke="#DC2626"
             strokeWidth="2.5"
             strokeLinejoin="round"
             strokeLinecap="round"
@@ -323,7 +323,7 @@ function ClusterRamp() {
                 x2={hover.xv}
                 y1={RAMP_PAD_TOP - 6}
                 y2={RAMP_H - RAMP_PAD_BOTTOM}
-                stroke="#D9FF35"
+                stroke="#DC2626"
                 strokeOpacity="0.55"
                 strokeWidth="1"
                 vectorEffect="non-scaling-stroke"
@@ -332,15 +332,15 @@ function ClusterRamp() {
                 cx={hover.xv}
                 cy={hover.yv}
                 r="8"
-                fill="#D9FF35"
+                fill="#DC2626"
                 fillOpacity="0.18"
               />
               <circle
                 cx={hover.xv}
                 cy={hover.yv}
                 r="3.5"
-                fill="#D9FF35"
-                stroke="#0B0B0F"
+                fill="#DC2626"
+                stroke="#F8F4EB"
                 strokeWidth="1.5"
               />
             </g>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
@@ -13,7 +13,7 @@ html {
 
 html,
 body {
-  background: #0a0a0b;
+  background: #f8f4eb;
 }
 
 @keyframes revealIn {
@@ -54,14 +54,14 @@ body {
   font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     sans-serif;
   font-feature-settings: "ss01", "cv11", "cv05";
-  color: #ffffff;
+  color: #0a0a0b;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: rgba(217, 255, 53, 0.32);
+  background: rgba(220, 38, 38, 0.24);
   color: #0a0a0b;
 }
 
@@ -73,16 +73,16 @@ body {
   background: transparent;
 }
 *::-webkit-scrollbar-thumb {
-  background: #2a2a33;
+  background: #cbc3a8;
   border-radius: 999px;
 }
 *::-webkit-scrollbar-thumb:hover {
-  background: #3a3a45;
+  background: #a89e84;
 }
 
 @layer base {
   ::-moz-selection {
-    background: rgba(217, 255, 53, 0.32);
+    background: rgba(220, 38, 38, 0.24);
     color: #0a0a0b;
   }
 }
@@ -206,10 +206,10 @@ body {
     @apply rounded-2xl border border-creamLine bg-creamDeep/60;
   }
   .hairline {
-    border-top: 1px solid #27272f;
+    border-top: 1px solid #e2dcc8;
   }
   .hairline-cream {
-    border-top: 1px solid #d8d2bf;
+    border-top: 1px solid #27272f;
   }
 
   /* Buttons */
@@ -217,7 +217,7 @@ body {
     @apply inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accentInk transition-all duration-150 hover:bg-accentDeep hover:-translate-y-px focus:outline-none focus:ring-4 focus:ring-accentRing;
   }
   .btn-secondary {
-    @apply inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-3 text-sm font-medium text-ink transition-all duration-150 hover:border-lineBright hover:bg-surfaceElev focus:outline-none focus:ring-4 focus:ring-white/10;
+    @apply inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-3 text-sm font-medium text-ink transition-all duration-150 hover:border-lineBright hover:bg-surfaceElev focus:outline-none focus:ring-4 focus:ring-ink/10;
   }
   .btn-secondary-cream {
     @apply inline-flex items-center gap-2 rounded-full border border-creamLine bg-cream/60 px-5 py-3 text-sm font-medium text-creamInk transition-all duration-150 hover:border-creamInk/40 hover:bg-creamDeep focus:outline-none focus:ring-4 focus:ring-creamInk/10;
@@ -231,7 +231,7 @@ body {
 
   /* Inputs */
   .input-clean {
-    @apply w-full rounded-full border border-line bg-surface px-5 py-3 text-sm text-ink outline-none transition focus:border-lineBright focus:ring-4 focus:ring-white/10 placeholder:text-inkSubtle;
+    @apply w-full rounded-full border border-line bg-surface px-5 py-3 text-sm text-ink outline-none transition focus:border-lineBright focus:ring-4 focus:ring-ink/10 placeholder:text-inkSubtle;
   }
   .input-cream {
     @apply w-full rounded-full border border-creamLine bg-cream/80 px-5 py-3 text-sm text-creamInk outline-none transition focus:border-creamInk/40 focus:ring-4 focus:ring-creamInk/10 placeholder:text-creamSubtle;
@@ -260,13 +260,13 @@ body {
     @apply rounded-2xl border border-line bg-onyxDeep overflow-hidden;
   }
   .code-shell-cream {
-    @apply rounded-2xl border border-creamLine bg-[#FBF8F0] overflow-hidden;
+    @apply rounded-2xl border border-creamLine bg-[#13131A] overflow-hidden;
   }
   .code-titlebar {
     @apply flex items-center justify-between border-b border-line bg-onyx px-4 py-2.5 text-[11px] font-medium uppercase tracking-eyebrow text-inkSubtle;
   }
   .code-titlebar-cream {
-    @apply flex items-center justify-between border-b border-creamLine bg-[#F0EBDE] px-4 py-2.5 text-[11px] font-medium uppercase tracking-eyebrow text-creamSubtle;
+    @apply flex items-center justify-between border-b border-creamLine bg-[#1B1B24] px-4 py-2.5 text-[11px] font-medium uppercase tracking-eyebrow text-creamSubtle;
   }
   .traffic {
     @apply flex items-center gap-1.5;
@@ -301,7 +301,7 @@ body {
     position: absolute;
     inset: -3px;
     border-radius: 9999px;
-    border: 1px solid rgba(124, 252, 139, 0.5);
+    border: 1px solid rgba(22, 163, 74, 0.5);
     animation: pulseDot 1.8s ease-in-out infinite;
   }
 
@@ -332,21 +332,21 @@ body {
   }
   .underline-accent {
     text-decoration: underline;
-    text-decoration-color: rgba(217, 255, 53, 0.5);
+    text-decoration-color: rgba(220, 38, 38, 0.5);
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
   }
   .grid-bg {
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      linear-gradient(rgba(10, 10, 11, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(10, 10, 11, 0.045) 1px, transparent 1px);
     background-size: 56px 56px;
     background-position: -1px -1px;
   }
   .grid-bg-cream {
     background-image:
-      linear-gradient(rgba(10, 10, 11, 0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(10, 10, 11, 0.045) 1px, transparent 1px);
+      linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
     background-size: 56px 56px;
     background-position: -1px -1px;
   }

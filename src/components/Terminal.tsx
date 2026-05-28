@@ -157,9 +157,9 @@ export function Terminal({
       <div className="code-titlebar">
         <div className="flex items-center gap-3">
           <div className="traffic">
-            <span style={{ background: "#27272F" }} />
-            <span style={{ background: "#27272F" }} />
-            <span style={{ background: "#27272F" }} />
+            <span style={{ background: "#E2DCC8" }} />
+            <span style={{ background: "#E2DCC8" }} />
+            <span style={{ background: "#E2DCC8" }} />
           </div>
           <span className="mono normal-case tracking-normal">{title}</span>
         </div>
