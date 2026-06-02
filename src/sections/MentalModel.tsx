@@ -54,9 +54,9 @@ export function MentalModel() {
             <Reveal delay={140}>
               <p className="lead-cream text-pretty max-w-[460px]">
                 Adaptive infrastructure means fewer tokens and less compute
-                for the same output. Burla pulls the architectural weight
-                out of the loop so the agent writes the function, ships it,
-                and moves on.
+                for the same output. Burla handles the infrastructure
+                decisions, so the agent writes the function, ships it, and
+                moves on.
               </p>
             </Reveal>
           </div>
