@@ -36,7 +36,7 @@ const WORKLOADS: Workload[] = [
     competitor: "Modal",
     burlaCompute: 32,
     burlaTokens: 0.8,
-    otherCompute: 48,
+    otherCompute: 144,
     otherTokens: 2.4,
   },
 ];
