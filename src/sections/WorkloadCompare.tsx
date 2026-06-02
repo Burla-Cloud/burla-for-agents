@@ -41,13 +41,6 @@ const WORKLOADS: Workload[] = [
   },
 ];
 
-const MAX_TOTAL = Math.max(
-  ...WORKLOADS.flatMap((w) => [
-    w.burlaCompute + w.burlaTokens,
-    w.otherCompute + w.otherTokens,
-  ]),
-);
-
 export function WorkloadCompare() {
   return (
     <section
@@ -132,8 +125,9 @@ function WorkloadRow({
 
   const burlaTotal = workload.burlaCompute + workload.burlaTokens;
   const otherTotal = workload.otherCompute + workload.otherTokens;
-  const burlaWidth = (burlaTotal / MAX_TOTAL) * 100;
-  const otherWidth = (otherTotal / MAX_TOTAL) * 100;
+  const rowMax = Math.max(burlaTotal, otherTotal);
+  const burlaWidth = (burlaTotal / rowMax) * 100;
+  const otherWidth = (otherTotal / rowMax) * 100;
   const savingsPct = Math.round(
     ((otherTotal - burlaTotal) / otherTotal) * 100,
   );

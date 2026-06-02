@@ -242,10 +242,10 @@ body {
     @apply mx-auto w-full max-w-[1120px] px-5 md:px-10 lg:px-14 xl:px-16;
   }
   .section {
-    @apply py-32 md:py-40;
+    @apply py-20 md:py-32 lg:py-40;
   }
   .section-tight {
-    @apply py-24 md:py-32;
+    @apply py-16 md:py-24 lg:py-32;
   }
 
   /* Code / terminal aesthetic */
