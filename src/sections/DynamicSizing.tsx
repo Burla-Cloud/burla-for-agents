@@ -2,15 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { motion, LayoutGroup } from "framer-motion";
 import { Reveal } from "../components/Reveal";
 
-const PILLS = [
-  { title: "No more OOM", body: "Heavy tasks get more room automatically." },
-  { title: "No more waste", body: "Idle slots fill with speculative work." },
-  { title: "No more long tail", body: "Big files don't kill the small ones." },
-];
-
 const SLOTS_PER_VM = 8;
 
-const ACCENT = "#1C6B66";
+const ACCENT = "#155E75";
 const WARM = "#C99A4A";
 const HEAVY = "#B4631F";
 
@@ -137,44 +131,25 @@ export function DynamicSizing() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-5">
             <Reveal>
-              <div className="eyebrow-on-cream mb-5">Dynamic sizing</div>
+              <div className="eyebrow-on-cream mb-5">How it works</div>
             </Reveal>
             <Reveal delay={60}>
               <h2 className="h-section-cream text-balance">
-                RAM and CPU that{" "}
-                <em className="not-italic underline-accent">
-                  figures itself out
-                </em>
-                .
+                Compute that{" "}
+                <em className="not-italic underline-accent">sizes itself</em>.
               </h2>
             </Reveal>
             <Reveal delay={140}>
               <p className="lead-cream mt-7 max-w-[500px] text-pretty">
-                Agents are bad at sizing decisions. They can't predict which
-                PDF needs 2GB and which needs 64. Burla removes the bet:
-                pass{" "}
-                <span className="mono text-creamInk font-medium">
-                  func_ram="dynamic"
-                </span>
-                , the scheduler watches real CPU and memory pressure, kills
-                workers to make room for heavy ones, and boots new machines on
-                the fly to keep parallelism high.
+                Agents are bad at sizing infrastructure. They can&rsquo;t know
+                which task needs 2GB of RAM and which needs 64GB before the
+                job runs.
               </p>
-            </Reveal>
-
-            <Reveal delay={220}>
-              <div className="mt-9 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-[600px]">
-                {PILLS.map((p) => (
-                  <div key={p.title} className="surface-cream px-4 py-4">
-                    <div className="font-display font-semibold text-[15px] text-creamInk">
-                      {p.title}
-                    </div>
-                    <div className="text-[13px] text-creamMuted mt-1.5 leading-snug">
-                      {p.body}
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <p className="lead-cream mt-5 max-w-[500px] text-pretty">
+                Burla watches CPU and memory in real time, gives heavy tasks
+                more room, fills idle capacity with smaller work, and adds
+                machines when the job needs more parallelism.
+              </p>
             </Reveal>
           </div>
 
@@ -184,6 +159,7 @@ export function DynamicSizing() {
             </Reveal>
           </div>
         </div>
+
       </div>
     </section>
   );
@@ -289,7 +265,7 @@ function ConcurrencyDemo() {
       <div className="flex items-center justify-between border-b border-creamLine px-5 py-3 md:px-6 flex-wrap gap-y-2">
         <div className="flex items-center gap-3">
           <span className="mono text-[13px] text-creamInk">
-            concurrency control · {paused ? "paused" : "live"}
+            concurrency control{paused ? " · paused" : " · dynamic"}
           </span>
         </div>
         <DemoControls
@@ -427,7 +403,7 @@ function VmPanel({
   state: VmSnapshot;
 }) {
   return (
-    <div className="rounded-lg border border-creamLine bg-[#13131A]/60 overflow-hidden">
+    <div className="rounded-lg border border-creamLine bg-[#0F1419]/60 overflow-hidden">
       <div className="flex items-center justify-between px-3.5 py-2 border-b border-creamLine flex-wrap gap-y-1">
         <div className="flex items-center gap-3 min-w-0">
           <span
@@ -479,7 +455,7 @@ function WorkerSlot({ workerId }: { workerId: string | null }) {
         >
           <div
             className="absolute inset-[2px] rounded-[5px]"
-            style={{ backgroundColor: ACCENT, opacity: 0.42 }}
+            style={{ backgroundColor: ACCENT, opacity: 0.85 }}
           />
           <div
             className="absolute inset-0 rounded-md pointer-events-none"
@@ -489,10 +465,7 @@ function WorkerSlot({ workerId }: { workerId: string | null }) {
               borderColor: ACCENT,
             }}
           />
-          <span
-            className="relative mono font-semibold text-[9px] md:text-[10px] leading-none select-none"
-            style={{ color: ACCENT }}
-          >
+          <span className="relative mono font-semibold text-[10px] md:text-[11px] uppercase tracking-wider leading-none select-none text-creamInk">
             {workerId}
           </span>
         </motion.div>

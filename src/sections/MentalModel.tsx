@@ -27,33 +27,21 @@ const ROWS: Row[] = [
     withAccent: 'func_ram="dynamic"',
   },
   {
-    topic: "Cold start",
-    without: "60 to 180 seconds. Every job.",
-    with: "Once at warm-up. Under a second after.",
-    withAccent: "under a second",
-  },
-  {
     topic: "When something fails",
     without: "Read logs across a hundred pods.",
     with: "Python traceback, locally, with the input.",
     withAccent: "locally",
   },
-  {
-    topic: "When the agent hits a new flag",
-    without: "Hallucinate from training data.",
-    with: "Query docs.burla.dev/?ask=… for live answers.",
-    withAccent: "?ask=",
-  },
 ];
 
 export function MentalModel() {
   return (
-    <section id="mental-model" className="section bg-cream text-creamInk">
+    <section id="mental-model" className="section-tight bg-cream text-creamInk">
       <div className="container-x">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 md:mb-16 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 md:mb-16 items-start">
           <div className="lg:col-span-7">
             <Reveal>
-              <div className="eyebrow-on-cream mb-5">Mental model</div>
+              <div className="eyebrow-on-cream mb-5">What gets simpler</div>
             </Reveal>
             <Reveal delay={60}>
               <h2 className="h-section-cream text-balance">
@@ -65,9 +53,10 @@ export function MentalModel() {
           <div className="lg:col-span-5">
             <Reveal delay={140}>
               <p className="lead-cream text-pretty max-w-[460px]">
-                Burla pulls the architectural weight out of the loop so
-                your agents can write code, deploy instantly, get feedback
-                fast, and scale.
+                Adaptive infrastructure means fewer tokens and less compute
+                for the same output. Burla pulls the architectural weight
+                out of the loop so the agent writes the function, ships it,
+                and moves on.
               </p>
             </Reveal>
           </div>
@@ -118,6 +107,7 @@ export function MentalModel() {
             </table>
           </div>
         </Reveal>
+
       </div>
     </section>
   );

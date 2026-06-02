@@ -13,7 +13,7 @@ html {
 
 html,
 body {
-  background: #f8f4eb;
+  background: #f5f7f9;
 }
 
 @keyframes revealIn {
@@ -54,15 +54,15 @@ body {
   font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     sans-serif;
   font-feature-settings: "ss01", "cv11", "cv05";
-  color: #0a0a0b;
+  color: #0f1419;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: rgba(220, 38, 38, 0.24);
-  color: #0a0a0b;
+  background: rgba(21, 94, 117, 0.22);
+  color: #0f1419;
 }
 
 *::-webkit-scrollbar {
@@ -73,17 +73,17 @@ body {
   background: transparent;
 }
 *::-webkit-scrollbar-thumb {
-  background: #cbc3a8;
+  background: #b0bac4;
   border-radius: 999px;
 }
 *::-webkit-scrollbar-thumb:hover {
-  background: #a89e84;
+  background: #8b95a0;
 }
 
 @layer base {
   ::-moz-selection {
-    background: rgba(220, 38, 38, 0.24);
-    color: #0a0a0b;
+    background: rgba(21, 94, 117, 0.22);
+    color: #0f1419;
   }
 }
 
@@ -109,10 +109,7 @@ body {
     @apply inline-flex items-center gap-1.5 rounded-full border border-creamLine bg-cream px-2.5 py-1 text-[11px] font-medium uppercase tracking-eyebrowTight text-creamMuted;
   }
 
-  /* Typographic display scale.
-     Heavily-tracked Inter functions as a display grotesk at large sizes.
-     Sizes are deliberately a bit conservative so the hero headline lands
-     on two lines at common laptop widths without feeling oversized. */
+  /* Typographic display scale. */
   .h-display {
     @apply font-display font-medium text-ink;
     font-size: clamp(2.05rem, 4.9vw, 4.55rem);
@@ -206,10 +203,10 @@ body {
     @apply rounded-2xl border border-creamLine bg-creamDeep/60;
   }
   .hairline {
-    border-top: 1px solid #e2dcc8;
+    border-top: 1px solid #d2dae2;
   }
   .hairline-cream {
-    border-top: 1px solid #27272f;
+    border-top: 1px solid #212931;
   }
 
   /* Buttons */
@@ -260,13 +257,13 @@ body {
     @apply rounded-2xl border border-line bg-onyxDeep overflow-hidden;
   }
   .code-shell-cream {
-    @apply rounded-2xl border border-creamLine bg-[#13131A] overflow-hidden;
+    @apply rounded-2xl border border-creamLine bg-[#0E1418] overflow-hidden;
   }
   .code-titlebar {
     @apply flex items-center justify-between border-b border-line bg-onyx px-4 py-2.5 text-[11px] font-medium uppercase tracking-eyebrow text-inkSubtle;
   }
   .code-titlebar-cream {
-    @apply flex items-center justify-between border-b border-creamLine bg-[#1B1B24] px-4 py-2.5 text-[11px] font-medium uppercase tracking-eyebrow text-creamSubtle;
+    @apply flex items-center justify-between border-b border-creamLine bg-[#131A20] px-4 py-2.5 text-[11px] font-medium uppercase tracking-eyebrow text-creamSubtle;
   }
   .traffic {
     @apply flex items-center gap-1.5;
@@ -275,19 +272,12 @@ body {
     @apply h-2.5 w-2.5 rounded-full bg-inkDim;
   }
 
-  /* Code lines wrap softly instead of forcing a horizontal scrollbar.
-     pre-wrap keeps existing whitespace and indentation;
-     overflow-wrap: anywhere prevents long URLs or identifiers from blowing
-     out the container in the rare case wrapping is needed. */
   .code-line {
     white-space: pre-wrap;
     overflow-wrap: anywhere;
     word-break: normal;
   }
 
-  /* Caption fade-in for phase-driven demos. The keyed element re-mounts on
-     each phase change and this animation re-runs, giving the caption a soft
-     transition between steps without disrupting layout. */
   .animate-caption-fade {
     animation: captionFade 700ms cubic-bezier(0.22, 1, 0.36, 1);
   }
@@ -332,14 +322,14 @@ body {
   }
   .underline-accent {
     text-decoration: underline;
-    text-decoration-color: rgba(220, 38, 38, 0.5);
+    text-decoration-color: rgba(21, 94, 117, 0.5);
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
   }
   .grid-bg {
     background-image:
-      linear-gradient(rgba(10, 10, 11, 0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(10, 10, 11, 0.045) 1px, transparent 1px);
+      linear-gradient(rgba(15, 20, 25, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 20, 25, 0.045) 1px, transparent 1px);
     background-size: 56px 56px;
     background-position: -1px -1px;
   }

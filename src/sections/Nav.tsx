@@ -3,9 +3,8 @@ import { Logo } from "../components/Logo";
 import { useRepoStats, formatStars } from "../lib/useRepoStats";
 
 const LINKS = [
-  { href: "#speed", label: "Why" },
-  { href: "#system-prompt", label: "System prompt" },
-  { href: "#self-host", label: "Self-host" },
+  { href: "#problem", label: "Why" },
+  { href: "#system-prompt", label: "Agent skill" },
   { href: "#faq", label: "FAQ" },
 ];
 

@@ -1,19 +1,24 @@
 import { useEffect, useRef, useState } from "react";
 import { Reveal } from "../components/Reveal";
 
-export function Scale() {
+export function DeployScale() {
   return (
-    <section id="scale" className="section relative overflow-hidden bg-onyxDeep">
+    <section
+      id="deploy-scale"
+      className="section relative overflow-hidden bg-onyxDeep"
+    >
       <div className="absolute inset-0 grid-bg opacity-50 pointer-events-none mask-fade-y" />
       <div className="container-x relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-5">
             <Reveal>
-              <div className="eyebrow mb-5">Scale</div>
+              <div className="eyebrow mb-5">Deploy and scale</div>
             </Reveal>
             <Reveal delay={60}>
               <h2 className="h-section text-balance">
-                One function call.{" "}
+                Call the function. It deploys in{" "}
+                <span className="underline-accent">under a second</span>. It
+                scales to{" "}
                 <span className="whitespace-nowrap">
                   <span className="text-accent tnum">10,000</span> CPUs.
                 </span>
@@ -21,47 +26,16 @@ export function Scale() {
             </Reveal>
             <Reveal delay={140}>
               <p className="lead mt-7 max-w-[480px] text-pretty">
-                We broke the{" "}
-                <a
-                  href="https://docs.burla.dev/examples/process-2.4tb-of-parquet-files-in-76s"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-ink underline decoration-accent decoration-2 underline-offset-[5px] hover:text-accent transition-colors"
-                >
-                  trillion-row challenge
-                </a>
-                : 2.4 TB of Parquet, scanned end-to-end in a single function
-                call. Same shape as a one-CPU local run. The agent declares
-                intent; the cluster decides the rest.
+                Burla only waits once, when the cluster warms up. After that
+                every call the agent makes deploys in under a second, on as
+                many VMs as the job needs.
               </p>
             </Reveal>
-            <Reveal delay={220}>
-              <div className="mt-10 max-w-[480px]">
-                <div className="stat-label mb-4">the request</div>
-                <blockquote className="font-display text-[26px] md:text-[30px] tracking-tighter2 leading-[1.1] text-ink text-balance">
-                  <span className="text-inkSubtle">&ldquo;</span>
-                  Count every row in 2.4&nbsp;TB of Parquet.
-                  <span className="text-inkSubtle">&rdquo;</span>
-                </blockquote>
-                <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 mono text-[12px] text-inkSubtle">
-                  <span>no cluster sizing</span>
-                  <span className="text-line">·</span>
-                  <span>no batching</span>
-                  <span className="text-line">·</span>
-                  <span>no infra config</span>
-                </div>
-                <a
-                  href="https://docs.burla.dev/examples/process-2.4tb-of-parquet-files-in-76s"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-7 inline-flex items-center gap-1.5 mono text-[12.5px] text-accent hover:text-ink transition-colors group"
-                >
-                  Read how we did it
-                  <span className="inline-block transition-transform group-hover:translate-x-0.5">
-                    →
-                  </span>
-                </a>
-              </div>
+            <Reveal delay={200}>
+              <p className="mt-6 md:mt-7 text-[15px] md:text-[16px] text-inkMuted max-w-[480px] text-pretty">
+                Here, one function call scans 2.4&nbsp;TB of Parquet in 76
+                seconds.
+              </p>
             </Reveal>
           </div>
 
@@ -70,12 +44,11 @@ export function Scale() {
               <div className="surface-elev overflow-hidden">
                 <div className="flex items-center justify-between px-5 py-3.5 md:px-6 border-b border-line flex-wrap gap-y-2">
                   <div className="flex items-center gap-4">
-                    <span className="chip-live">
-                      <span className="live-dot" />
+                    <span className="mono text-[12px] text-inkSubtle uppercase tracking-eyebrow">
                       Cluster scaling
                     </span>
                     <span className="mono text-[12px] text-inkSubtle hidden sm:inline">
-                      80 cpu · n2-standard-80 · us-central1
+                      125 vms · n2-standard-80 · us-central1
                     </span>
                   </div>
                   <div className="flex items-center gap-5 mono text-[12px]">
@@ -92,40 +65,13 @@ export function Scale() {
                   </div>
                 </div>
                 <ClusterRamp />
-                <div className="border-t border-line grid grid-cols-3 divide-x divide-line">
-                  <ScaleStat label="data scanned" value="2.4 TB" />
-                  <ScaleStat label="wall time" value="76 s" />
-                  <ScaleStat label="rows scanned" value="1.0 T" accent />
-                </div>
               </div>
             </Reveal>
           </div>
         </div>
+
       </div>
     </section>
-  );
-}
-
-function ScaleStat({
-  label,
-  value,
-  accent,
-}: {
-  label: string;
-  value: string;
-  accent?: boolean;
-}) {
-  return (
-    <div className="px-5 py-5 md:px-6 md:py-6">
-      <div className="stat-label">{label}</div>
-      <div
-        className={`mt-2 font-display font-medium text-[28px] md:text-[34px] tracking-tighter2 tnum ${
-          accent ? "text-accent" : "text-ink"
-        }`}
-      >
-        {value}
-      </div>
-    </div>
   );
 }
 
@@ -169,7 +115,7 @@ function ClusterRamp() {
   const linePath = samples
     .map(
       (p, i) =>
-        `${i === 0 ? "M" : "L"} ${xOf(p.t).toFixed(1)} ${yOf(p.c).toFixed(1)}`
+        `${i === 0 ? "M" : "L"} ${xOf(p.t).toFixed(1)} ${yOf(p.c).toFixed(1)}`,
     )
     .join(" ");
   const areaPath = `${linePath} L ${xOf(RAMP_TOTAL_S).toFixed(1)} ${yOf(0).toFixed(1)} L ${xOf(0).toFixed(1)} ${yOf(0).toFixed(1)} Z`;
@@ -216,9 +162,6 @@ function ClusterRamp() {
     });
   }, [armed]);
 
-  // Map a clientX (in CSS px) to the viewBox coordinate space, then to a
-  // (time, cpus) sample on the ramp curve. The SVG uses preserveAspectRatio
-  // "none", so x scales linearly with the container width.
   const updateHoverFromClientX = (clientX: number) => {
     const el = chartRef.current;
     if (!el) return;
@@ -261,12 +204,12 @@ function ClusterRamp() {
           viewBox={`0 0 ${RAMP_W} ${RAMP_H}`}
           className="w-full h-full block"
           preserveAspectRatio="none"
-          aria-label="Cluster CPUs over wall-clock time. Ramps from 0 to 10,000 in ~15 seconds, holds, finishes at 76 seconds. Hover or touch the chart to read CPUs at any point."
+          aria-label="Cluster CPUs over wall-clock time. Ramps from 0 to 10,000 in about 15 seconds, holds, finishes at 76 seconds. Hover or touch the chart to read CPUs at any point."
         >
           <defs>
             <linearGradient id="rampGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#DC2626" stopOpacity="0.32" />
-              <stop offset="100%" stopColor="#DC2626" stopOpacity="0" />
+              <stop offset="0%" stopColor="#155E75" stopOpacity="0.32" />
+              <stop offset="100%" stopColor="#155E75" stopOpacity="0" />
             </linearGradient>
           </defs>
 
@@ -277,7 +220,7 @@ function ClusterRamp() {
               x2={RAMP_W - RAMP_PAD_X}
               y1={yOf(c)}
               y2={yOf(c)}
-              stroke="#E2DCC8"
+              stroke="#D2DAE2"
               strokeDasharray="2 8"
               strokeWidth="1"
               vectorEffect="non-scaling-stroke"
@@ -289,7 +232,7 @@ function ClusterRamp() {
             x2={RAMP_W - RAMP_PAD_X}
             y1={yOf(RAMP_PEAK_CPUS)}
             y2={yOf(RAMP_PEAK_CPUS)}
-            stroke="#DC2626"
+            stroke="#155E75"
             strokeOpacity="0.35"
             strokeDasharray="4 6"
             strokeWidth="1"
@@ -309,7 +252,7 @@ function ClusterRamp() {
             ref={lineRef}
             d={linePath}
             fill="none"
-            stroke="#DC2626"
+            stroke="#155E75"
             strokeWidth="2.5"
             strokeLinejoin="round"
             strokeLinecap="round"
@@ -323,7 +266,7 @@ function ClusterRamp() {
                 x2={hover.xv}
                 y1={RAMP_PAD_TOP - 6}
                 y2={RAMP_H - RAMP_PAD_BOTTOM}
-                stroke="#DC2626"
+                stroke="#155E75"
                 strokeOpacity="0.55"
                 strokeWidth="1"
                 vectorEffect="non-scaling-stroke"
@@ -332,15 +275,15 @@ function ClusterRamp() {
                 cx={hover.xv}
                 cy={hover.yv}
                 r="8"
-                fill="#DC2626"
+                fill="#155E75"
                 fillOpacity="0.18"
               />
               <circle
                 cx={hover.xv}
                 cy={hover.yv}
                 r="3.5"
-                fill="#DC2626"
-                stroke="#F8F4EB"
+                fill="#155E75"
+                stroke="#F5F7F9"
                 strokeWidth="1.5"
               />
             </g>

@@ -13,7 +13,7 @@ const COLS = [
   {
     heading: "For agents",
     links: [
-      { label: "System prompt", href: "#system-prompt" },
+      { label: "Agent skill", href: "#system-prompt" },
       { label: "llms-full.txt", href: "https://docs.burla.dev/llms-full.txt" },
       { label: "sitemap.md", href: "https://docs.burla.dev/sitemap.md" },
     ],
@@ -21,7 +21,6 @@ const COLS = [
   {
     heading: "Resources",
     links: [
-      { label: "Self-host", href: "#self-host" },
       { label: "Dynamic Hardware", href: "https://burla.dev/blog/dynamic-hardware" },
       { label: "FAQ", href: "#faq" },
       {
@@ -53,7 +52,7 @@ export function Footer() {
                 GitHub
               </a>
               <a href="#system-prompt" className="btn-primary">
-                Get the system prompt
+                Get the agent skill
               </a>
             </div>
           </div>
@@ -90,10 +89,6 @@ export function Footer() {
         <div className="mt-14 pt-7 border-t border-line flex flex-wrap items-center justify-between gap-3 text-[12px] text-inkSubtle">
           <div className="mono">
             © 2026 Burla · Open source · No tracking on this page
-          </div>
-          <div className="mono flex items-center gap-3">
-            <span className="live-dot" />
-            <span>Built with the same primitive your agent will use</span>
           </div>
         </div>
       </div>

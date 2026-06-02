@@ -1,14 +1,14 @@
 import { Nav } from "./sections/Nav";
 import { Hero } from "./sections/Hero";
-import { Speed } from "./sections/Speed";
-import { Scale } from "./sections/Scale";
+import { Problem } from "./sections/Problem";
+import { Solution } from "./sections/Solution";
 import { MentalModel } from "./sections/MentalModel";
-import { DynamicHardware } from "./sections/DynamicHardware";
-import { Efficiency } from "./sections/Efficiency";
+import { DeployScale } from "./sections/DeployScale";
 import { DynamicSizing } from "./sections/DynamicSizing";
+import { WorkloadCompare } from "./sections/WorkloadCompare";
 import { SystemPrompt } from "./sections/SystemPrompt";
-import { OpenSource } from "./sections/OpenSource";
 import { FAQ } from "./sections/FAQ";
+import { FinalCTA } from "./sections/FinalCTA";
 import { Footer } from "./sections/Footer";
 
 export default function App() {
@@ -17,15 +17,15 @@ export default function App() {
       <Nav />
       <main className="bg-onyx text-ink">
         <Hero />
-        <Speed />
-        <Scale />
+        <Problem />
+        <Solution />
         <MentalModel />
-        <DynamicHardware />
-        <Efficiency />
+        <DeployScale />
         <DynamicSizing />
+        <WorkloadCompare />
         <SystemPrompt />
-        <OpenSource />
         <FAQ />
+        <FinalCTA />
       </main>
       <Footer />
     </>

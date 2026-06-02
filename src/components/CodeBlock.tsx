@@ -212,17 +212,17 @@ function classFor(t: Token["t"], variant: Variant): string {
       case "comment":
         return "text-inkSubtle";
       case "string":
-        return "text-[#B45309]";
+        return "text-[#92400E]";
       case "kw":
-        return "text-[#1D4ED8]";
+        return "text-[#164E63]";
       case "bi":
-        return "text-[#2563EB]";
+        return "text-[#0E7490]";
       case "hl":
         return "text-accent";
       case "num":
-        return "text-[#B45309]";
+        return "text-[#92400E]";
       case "deco":
-        return "text-[#B45309]";
+        return "text-[#92400E]";
       default:
         return "text-ink";
     }
@@ -231,17 +231,17 @@ function classFor(t: Token["t"], variant: Variant): string {
     case "comment":
       return "text-creamSubtle";
     case "string":
-      return "text-[#E8B468]";
+      return "text-[#FBBF24]";
     case "kw":
-      return "text-[#7BA7FF]";
+      return "text-[#67E8F9]";
     case "bi":
-      return "text-[#B6D2FF]";
+      return "text-[#A5F3FC]";
     case "hl":
-      return "text-[#F8F4EB] font-semibold underline decoration-accent decoration-2 underline-offset-[5px]";
+      return "text-[#F5F7F9] font-semibold underline decoration-accent decoration-2 underline-offset-[5px]";
     case "num":
-      return "text-[#E8B468]";
+      return "text-[#FBBF24]";
     case "deco":
-      return "text-[#E8B468]";
+      return "text-[#FBBF24]";
     default:
       return "text-creamInk";
   }
@@ -295,13 +295,13 @@ export function CodeBlock({
           <div className="flex items-center gap-3">
             <div className="traffic">
               <span
-                style={{ background: isCream ? "#27272F" : "#E2DCC8" }}
+                style={{ background: isCream ? "#212931" : "#D2DAE2" }}
               />
               <span
-                style={{ background: isCream ? "#27272F" : "#E2DCC8" }}
+                style={{ background: isCream ? "#212931" : "#D2DAE2" }}
               />
               <span
-                style={{ background: isCream ? "#27272F" : "#E2DCC8" }}
+                style={{ background: isCream ? "#212931" : "#D2DAE2" }}
               />
             </div>
             {filename && (
@@ -356,7 +356,7 @@ export function CodeBlock({
                 }`}
                 style={
                   highlighted
-                    ? { boxShadow: "inset 2px 0 0 #DC2626" }
+                    ? { boxShadow: "inset 2px 0 0 #155E75" }
                     : undefined
                 }
               >

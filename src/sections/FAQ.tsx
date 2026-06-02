@@ -104,7 +104,7 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="section bg-onyx relative">
+    <section id="faq" className="section-tight bg-onyx relative">
       <div className="container-tight">
         <div className="mb-10 md:mb-14">
           <Reveal>

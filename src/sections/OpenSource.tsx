@@ -15,7 +15,7 @@ const REPO_HTML = "https://github.com/Burla-Cloud/burla";
 
 export function OpenSource() {
   return (
-    <section id="self-host" className="section bg-onyxDeep relative">
+    <section id="self-host" className="section-tight bg-onyxDeep relative">
       <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none mask-fade-y" />
       <div className="container-x relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">

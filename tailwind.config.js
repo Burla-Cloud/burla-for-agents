@@ -1,46 +1,44 @@
 /**
- * Burla for Agents — V3 Editorial Light.
- * Warm paper primary canvas. Deep onyx secondary inverse panel.
- * Single editorial-red accent for live state only.
+ * Burla for Agents — V8 Paper Blue.
+ * Cool near-white primary canvas. Deep slate inverse panel.
+ * Royal-blue accent — the middle reading of the three blue light variants.
  *
- * Role tokens are inverted compared to dark variants: `onyx` is now the
+ * Role tokens are inverted compared to dark variants: `onyx` is the
  * light primary canvas and `cream` is the dark inverse secondary panel.
- * Component classes (bg-onyx, text-ink, text-creamInk, ...) keep their
- * semantic meaning so the layout flips correctly without touching JSX.
  */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        onyx: "#F8F4EB",
-        onyxDeep: "#EEE7D5",
-        surface: "#FCFAF5",
-        surfaceElev: "#F4EFE0",
-        surfaceHi: "#ECE5D2",
-        line: "#E2DCC8",
-        lineBright: "#CBC3A8",
-        ink: "#0A0A0B",
-        inkMuted: "#5A5A60",
-        inkSubtle: "#86807A",
-        inkDim: "#B3AEA1",
-        cream: "#0A0A0B",
-        creamDeep: "#13131A",
-        creamLine: "#27272F",
-        creamInk: "#F8F4EB",
-        creamMuted: "#A8A8B3",
-        creamSubtle: "#65656F",
-        accent: "#DC2626",
-        accentDeep: "#B91C1C",
-        accentSoft: "rgba(220, 38, 38, 0.10)",
-        accentRing: "rgba(220, 38, 38, 0.28)",
+        onyx: "#F5F7F9",
+        onyxDeep: "#D6DDE5",
+        surface: "#FFFFFF",
+        surfaceElev: "#EEF2F6",
+        surfaceHi: "#D2DAE2",
+        line: "#D2DAE2",
+        lineBright: "#B0BAC4",
+        ink: "#0F1419",
+        inkMuted: "#3F4854",
+        inkSubtle: "#6B7480",
+        inkDim: "#98A1AB",
+        cream: "#0F1419",
+        creamDeep: "#0E1418",
+        creamLine: "#212931",
+        creamInk: "#F5F7F9",
+        creamMuted: "#A4ADB8",
+        creamSubtle: "#5E6772",
+        accent: "#155E75",
+        accentDeep: "#164E63",
+        accentSoft: "rgba(21, 94, 117, 0.10)",
+        accentRing: "rgba(21, 94, 117, 0.28)",
         accentInk: "#FFFFFF",
         live: "#16A34A",
         liveSoft: "rgba(22, 163, 74, 0.14)",
         warn: "#EA580C",
         error: "#DC2626",
-        blue: "#1D4ED8",
-        blueSoft: "rgba(29, 78, 216, 0.10)",
+        blue: "#155E75",
+        blueSoft: "rgba(21, 94, 117, 0.10)",
       },
       fontFamily: {
         sans: [
@@ -74,16 +72,16 @@ export default {
         eyebrowTight: "0.12em",
       },
       boxShadow: {
-        glow: "0 0 0 1px rgba(220,38,38,0.4), 0 0 40px rgba(220,38,38,0.18)",
-        card: "0 1px 0 rgba(10,10,11,0.03) inset, 0 18px 60px -20px rgba(10,10,11,0.10)",
+        glow: "0 0 0 1px rgba(21,94,117,0.4), 0 0 40px rgba(21,94,117,0.18)",
+        card: "0 1px 0 rgba(15,20,25,0.03) inset, 0 18px 60px -20px rgba(15,20,25,0.10)",
         cream:
           "0 1px 0 rgba(255,255,255,0.04) inset, 0 18px 60px -20px rgba(0,0,0,0.5)",
       },
       backgroundImage: {
         onyxGrad:
-          "radial-gradient(60% 90% at 70% 0%, rgba(220,38,38,0.06), transparent 60%), radial-gradient(50% 70% at 0% 0%, rgba(29,78,216,0.04), transparent 60%), linear-gradient(180deg, #F8F4EB 0%, #EEE7D5 100%)",
+          "radial-gradient(60% 90% at 70% 0%, rgba(21,94,117,0.06), transparent 60%), radial-gradient(50% 70% at 0% 0%, rgba(99,102,241,0.04), transparent 60%), linear-gradient(180deg, #F5F7F9 0%, #D6DDE5 100%)",
         gridFade:
-          "linear-gradient(180deg, rgba(10,10,11,0.05) 0%, transparent 60%)",
+          "linear-gradient(180deg, rgba(15,20,25,0.05) 0%, transparent 60%)",
       },
       keyframes: {
         floatIn: {

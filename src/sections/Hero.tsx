@@ -146,15 +146,6 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-9 lg:gap-10 items-center">
           {/* Left column */}
           <div className="lg:col-span-6 xl:col-span-6">
-            <Reveal>
-              <div className="chip mb-5">
-                <span className="live-dot" />
-                <span className="text-inkMuted">
-                  Open-source compute for AI agents
-                </span>
-              </div>
-            </Reveal>
-
             <Reveal delay={60}>
               <h1 className="h-display text-balance">
                 Give your agent{" "}
@@ -175,18 +166,10 @@ export function Hero() {
               </p>
             </Reveal>
 
-            <Reveal delay={220}>
-              <p className="mono mt-5 text-[13px] text-inkSubtle">
-                <span className="text-ink">One function.</span> One pip
-                install.{" "}
-                <span className="text-ink">Your infrastructure.</span>
-              </p>
-            </Reveal>
-
             <Reveal delay={300}>
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 <a href="#system-prompt" className="btn-primary">
-                  Get the system prompt
+                  Get the agent skill
                   <svg
                     width="14"
                     height="14"
@@ -228,41 +211,8 @@ export function Hero() {
             </Reveal>
           </div>
         </div>
-
-        {/* Proof row — anchored to the hero with a hairline, not a floating island */}
-        <Reveal delay={500}>
-          <div className="mt-8 md:mt-10 pt-5 md:pt-6 border-t border-line">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-5 gap-x-10 md:gap-x-14">
-              <HeroStat
-                num="< 1s"
-                label="per submission, once warm"
-              />
-              <HeroStat
-                num="10,000"
-                label="CPUs per function call"
-              />
-              <HeroStat
-                num="2–5×"
-                label="better utilization vs other runtimes"
-              />
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
-  );
-}
-
-function HeroStat({ num, label }: { num: string; label: string }) {
-  return (
-    <div className="flex flex-col gap-1">
-      <div className="font-display font-medium text-ink tnum tracking-tighter2 text-[26px] md:text-[30px] leading-none">
-        {num}
-      </div>
-      <div className="text-[11px] font-medium uppercase tracking-eyebrow text-inkSubtle leading-snug max-w-[220px]">
-        {label}
-      </div>
-    </div>
   );
 }
 

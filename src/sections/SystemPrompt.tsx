@@ -155,10 +155,10 @@ export function SystemPrompt() {
     >
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none mask-fade-y" />
       <div className="container-x relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-10 md:mb-14 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-10 md:mb-14 items-start">
           <div className="lg:col-span-7">
             <Reveal>
-              <div className="eyebrow mb-5">System prompt</div>
+              <div className="eyebrow mb-5">Agent skill</div>
             </Reveal>
             <Reveal delay={60}>
               <h2 className="h-section text-balance">
@@ -173,9 +173,10 @@ export function SystemPrompt() {
           <div className="lg:col-span-5">
             <Reveal delay={140}>
               <p className="lead text-pretty max-w-[460px]">
-                How to install Burla, how to call it, every flag you can
-                pass, and where to look when stuck. Drop into Claude, Cursor,
-                Codex, or any tool-using LLM. Copy once, ship the agent.
+                Give your agent one file with the install steps, API calls,
+                flags, and debugging notes it needs to build with Burla. Drop
+                it into Claude, Cursor, Codex, or any tool-using LLM, and it
+                can ship the integration.
               </p>
             </Reveal>
           </div>
@@ -197,7 +198,7 @@ export function SystemPrompt() {
                     ? "bg-live text-onyx"
                     : "bg-accent text-accentInk hover:bg-accentDeep"
                 }`}
-                aria-label="Copy system prompt"
+                aria-label="Copy agent skill"
               >
                 {copied ? (
                   <>
@@ -243,7 +244,7 @@ export function SystemPrompt() {
                         strokeLinecap="round"
                       />
                     </svg>
-                    Copy system prompt
+                    Copy agent skill
                   </>
                 )}
               </button>
